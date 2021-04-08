@@ -1,7 +1,7 @@
 ﻿using System;
 using Alura.LeilaoOnline.Core;
 
-namespace Alura.LeilaoOnline.Console
+namespace Alura.LeilaoOnline.ConsoleApp
 {
     class Program
     {
@@ -14,9 +14,11 @@ namespace Alura.LeilaoOnline.Console
             leilao.RecebeLance(fulano, 800);
             leilao.RecebeLance(maria, 900);
             leilao.RecebeLance(fulano, 1000);
+            leilao.RecebeLance(maria, 990);
 
             leilao.TerminaPregao();
 
+            Console.WriteLine(leilao.Ganhador.Valor);
         }
     }
 }
