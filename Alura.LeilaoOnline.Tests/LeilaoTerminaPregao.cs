@@ -41,6 +41,26 @@ namespace Alura.LeilaoOnline.Tests
             var valorObtido = leilao.Ganhador.Valor;
             Assert.Equal(valorEsperado, valorObtido);
         }
+
+        [Fact]
+        public void LanceInvalidOperationExceptionDadoPragoNaoIniciado()
+        {
+            //Arranjo - Cenário           
+            var leilao = new Leilao("Van Gogh");
+
+            try
+            {
+                //Act - método sob teste            
+                leilao.TerminaPregao();
+                Assert.True(false);
+            }
+            catch (System.Exception e)
+            {
+                //Assert
+                Assert.IsType<System.InvalidOperationException>(e);
+            }
+        }
+
         [Fact]
         public void RetornaZeroDadoLeilaoSemLances()
         {
